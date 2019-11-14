@@ -1,0 +1,10 @@
+<div class="container col-8 mt-3">
+
+  <h1>Coctkails</h1>
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail.name, cocktail_path(cocktail) %>
+  <% end %>
+  <br>
+  <%= link_to 'Create a new cocktail', new_cocktail_path, class:'btn btn-primary mt-5' %>
+
+</div>
