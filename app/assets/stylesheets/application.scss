@@ -7,7 +7,18 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "cocktails";
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: #02182B;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

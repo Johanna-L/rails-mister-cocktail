@@ -1,10 +1,25 @@
-<div class="container col-8 mt-3">
-
-  <h1>Coctkails</h1>
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  <% end %>
-  <br>
-  <%= link_to 'Create a new cocktail', new_cocktail_path, class:'btn btn-primary mt-5' %>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://eccegusto.com/wp-content/uploads/2017/03/pizzeria-popolare.jpg);">
+  <div class="container col-8 mt-3">
+    <h1>/kɔk.tɛl/</h1>
+  </div>
 </div>
+<div class="container  col-8 py-4 my-4" style="background-color: #EAF2EF">
+  <div class="cocktail-cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/featured/?cocktail,<%= cocktail.name.split.first %>);">
+        <h5 class="card-title text-center"><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></h5>
+        <p class="card-text text-center">
+          <ul><% cocktail.ingredients.each do |ingredient| %>
+            <li class="text-white">
+              <%= ingredient.name.capitalize %>
+            </li>
+            <% end %>
+          </ul>
+        </p>
+      </div>
+      <% end %>
+    </div>
+  <%= link_to 'Create a new cocktail', new_cocktail_path, class:'btn btn-primary mt-4' %>
+</div>
+
+
